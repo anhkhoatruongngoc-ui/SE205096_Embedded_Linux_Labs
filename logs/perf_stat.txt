@@ -1,0 +1,7 @@
+event syntax error: '..u!1cycles/,cpu_atom/TOPDOWN_RETIRING.ALL,metric-id=cpu..'
+                                  \___ Bad event or PMU
+
+Unable to find PMU or event on a PMU of 'cpu_atom'
+Error:
+No supported events found.
+¡þ

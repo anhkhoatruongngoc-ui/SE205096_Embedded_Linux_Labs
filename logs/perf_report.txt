@@ -1,0 +1,742 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 10  of event 'task-clock:ppp'
+# Event count (approx.): 2500000
+#
+# Children      Self  Command      Shared Object         Symbol                               
+# ........  ........  ...........  ....................  .....................................
+#
+    50.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--40.00%--init_cpu_features.constprop.0
+               |          dl_init_cacheinfo (inlined)
+               |          |          
+               |          |--30.00%--handle_intel.constprop.0
+               |          |          intel_check_word.constprop.0
+               |          |          
+               |           --10.00%--get_common_cache_info.constprop.0
+               |          
+                --10.00%--dl_main
+                          rtld_timer_accum (inlined)
+                          rtld_timer_stop (inlined)
+                          _dl_map_object_deps
+                          __GI__dl_catch_exception (inlined)
+                          set_catch (inlined)
+                          openaux
+                          _dl_map_new_object
+                          open_verify (inlined)
+                          __GI___open64_nocancel
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_openat
+                          do_sys_openat2
+                          do_file_open
+                          path_openat
+                          alloc_empty_file
+                          kmem_cache_alloc_noprof
+                          __memcg_slab_post_alloc_hook
+
+    50.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--40.00%--init_cpu_features.constprop.0
+               |          dl_init_cacheinfo (inlined)
+               |          |          
+               |          |--30.00%--handle_intel.constprop.0
+               |          |          intel_check_word.constprop.0
+               |          |          
+               |           --10.00%--get_common_cache_info.constprop.0
+               |          
+                --10.00%--dl_main
+                          rtld_timer_accum (inlined)
+                          rtld_timer_stop (inlined)
+                          _dl_map_object_deps
+                          __GI__dl_catch_exception (inlined)
+                          set_catch (inlined)
+                          openaux
+                          _dl_map_new_object
+                          open_verify (inlined)
+                          __GI___open64_nocancel
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_openat
+                          do_sys_openat2
+                          do_file_open
+                          path_openat
+                          alloc_empty_file
+                          kmem_cache_alloc_noprof
+                          __memcg_slab_post_alloc_hook
+
+    50.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_start_final (inlined)
+            |
+            ---_dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--40.00%--init_cpu_features.constprop.0
+               |          dl_init_cacheinfo (inlined)
+               |          |          
+               |          |--30.00%--handle_intel.constprop.0
+               |          |          intel_check_word.constprop.0
+               |          |          
+               |           --10.00%--get_common_cache_info.constprop.0
+               |          
+                --10.00%--dl_main
+                          rtld_timer_accum (inlined)
+                          rtld_timer_stop (inlined)
+                          _dl_map_object_deps
+                          __GI__dl_catch_exception (inlined)
+                          set_catch (inlined)
+                          openaux
+                          _dl_map_new_object
+                          open_verify (inlined)
+                          __GI___open64_nocancel
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_openat
+                          do_sys_openat2
+                          do_file_open
+                          path_openat
+                          alloc_empty_file
+                          kmem_cache_alloc_noprof
+                          __memcg_slab_post_alloc_hook
+
+    50.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               |          
+               |--40.00%--init_cpu_features.constprop.0
+               |          dl_init_cacheinfo (inlined)
+               |          |          
+               |          |--30.00%--handle_intel.constprop.0
+               |          |          intel_check_word.constprop.0
+               |          |          
+               |           --10.00%--get_common_cache_info.constprop.0
+               |          
+                --10.00%--dl_main
+                          rtld_timer_accum (inlined)
+                          rtld_timer_stop (inlined)
+                          _dl_map_object_deps
+                          __GI__dl_catch_exception (inlined)
+                          set_catch (inlined)
+                          openaux
+                          _dl_map_new_object
+                          open_verify (inlined)
+                          __GI___open64_nocancel
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_openat
+                          do_sys_openat2
+                          do_file_open
+                          path_openat
+                          alloc_empty_file
+                          kmem_cache_alloc_noprof
+                          __memcg_slab_post_alloc_hook
+
+    40.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] init_cpu_features.constprop.0
+            |
+            ---init_cpu_features.constprop.0
+               dl_init_cacheinfo (inlined)
+               |          
+               |--30.00%--handle_intel.constprop.0
+               |          intel_check_word.constprop.0
+               |          
+                --10.00%--get_common_cache_info.constprop.0
+
+    40.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] dl_init_cacheinfo (inlined)
+            |
+            ---dl_init_cacheinfo (inlined)
+               |          
+               |--30.00%--handle_intel.constprop.0
+               |          intel_check_word.constprop.0
+               |          
+                --10.00%--get_common_cache_info.constprop.0
+
+    30.00%    30.00%  perf_target  ld-linux-x86-64.so.2  [.] intel_check_word.constprop.0
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               init_cpu_features.constprop.0
+               dl_init_cacheinfo (inlined)
+               handle_intel.constprop.0
+               intel_check_word.constprop.0
+
+    30.00%    20.00%  perf_target  perf_target           [.] heavy_compute
+            |          
+            |--10.00%--heavy_compute
+            |          asm_sysvec_apic_timer_interrupt
+            |          sysvec_apic_timer_interrupt
+            |          irq_exit_rcu
+            |          __irq_exit_rcu
+            |          handle_softirqs
+            |          
+            |--10.00%--0x40f50be000000000
+            |          heavy_compute
+            |          
+             --10.00%--0x40ad000000000000
+                       heavy_compute
+
+    30.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] handle_intel.constprop.0
+            |
+            ---handle_intel.constprop.0
+               intel_check_word.constprop.0
+
+    20.00%     0.00%  perf_target  perf_target           [.] io_intensive
+            |
+            ---io_intensive
+               __fprintf_chk
+               __vfprintf_internal
+               asm_exc_page_fault
+               exc_page_fault
+               |          
+               |--10.00%--irqentry_exit
+               |          arch_do_signal_or_restart
+               |          get_signal
+               |          vfs_coredump
+               |          coredump_pipe
+               |          
+                --10.00%--do_user_addr_fault
+                          bad_area_nosemaphore
+                          __bad_area_nosemaphore
+                          __printk_ratelimit
+                          ___ratelimit
+                          _raw_spin_unlock_irqrestore
+
+    20.00%     0.00%  perf_target  libc.so.6             [.] __fprintf_chk
+            |
+            ---__fprintf_chk
+               __vfprintf_internal
+               asm_exc_page_fault
+               exc_page_fault
+               |          
+               |--10.00%--irqentry_exit
+               |          arch_do_signal_or_restart
+               |          get_signal
+               |          vfs_coredump
+               |          coredump_pipe
+               |          
+                --10.00%--do_user_addr_fault
+                          bad_area_nosemaphore
+                          __bad_area_nosemaphore
+                          __printk_ratelimit
+                          ___ratelimit
+                          _raw_spin_unlock_irqrestore
+
+    20.00%     0.00%  perf_target  libc.so.6             [.] __vfprintf_internal
+            |
+            ---__vfprintf_internal
+               asm_exc_page_fault
+               exc_page_fault
+               |          
+               |--10.00%--irqentry_exit
+               |          arch_do_signal_or_restart
+               |          get_signal
+               |          vfs_coredump
+               |          coredump_pipe
+               |          
+                --10.00%--do_user_addr_fault
+                          bad_area_nosemaphore
+                          __bad_area_nosemaphore
+                          __printk_ratelimit
+                          ___ratelimit
+                          _raw_spin_unlock_irqrestore
+
+    20.00%     0.00%  perf_target  [kernel.kallsyms]     [.] asm_exc_page_fault
+            |
+            ---asm_exc_page_fault
+               exc_page_fault
+               |          
+               |--10.00%--irqentry_exit
+               |          arch_do_signal_or_restart
+               |          get_signal
+               |          vfs_coredump
+               |          coredump_pipe
+               |          
+                --10.00%--do_user_addr_fault
+                          bad_area_nosemaphore
+                          __bad_area_nosemaphore
+                          __printk_ratelimit
+                          ___ratelimit
+                          _raw_spin_unlock_irqrestore
+
+    20.00%     0.00%  perf_target  [kernel.kallsyms]     [.] exc_page_fault
+            |
+            ---exc_page_fault
+               |          
+               |--10.00%--irqentry_exit
+               |          arch_do_signal_or_restart
+               |          get_signal
+               |          vfs_coredump
+               |          coredump_pipe
+               |          
+                --10.00%--do_user_addr_fault
+                          bad_area_nosemaphore
+                          __bad_area_nosemaphore
+                          __printk_ratelimit
+                          ___ratelimit
+                          _raw_spin_unlock_irqrestore
+
+    20.00%     0.00%  perf_target  [unknown]             [.] 0x40f50be000000000
+            |
+            ---0x40f50be000000000
+               heavy_compute
+               |          
+                --10.00%--asm_sysvec_apic_timer_interrupt
+                          sysvec_apic_timer_interrupt
+                          irq_exit_rcu
+                          __irq_exit_rcu
+                          handle_softirqs
+
+    10.00%    10.00%  perf_target  [kernel.kallsyms]     [k] __memcg_slab_post_alloc_hook
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] rtld_timer_accum (inlined)
+            |
+            ---rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] rtld_timer_stop (inlined)
+            |
+            ---rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               __GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] __GI__dl_catch_exception (inlined)
+            |
+            ---__GI__dl_catch_exception (inlined)
+               set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] set_catch (inlined)
+            |
+            ---set_catch (inlined)
+               openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] _dl_map_new_object
+            |
+            ---_dl_map_new_object
+               open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] open_verify (inlined)
+            |
+            ---open_verify (inlined)
+               __GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%    10.00%  perf_target  [kernel.kallsyms]     [k] _raw_spin_unlock_irqrestore
+            |
+            ---io_intensive
+               __fprintf_chk
+               __vfprintf_internal
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               bad_area_nosemaphore
+               __bad_area_nosemaphore
+               __printk_ratelimit
+               ___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  ld-linux-x86-64.so.2  [.] __GI___open64_nocancel
+            |
+            ---__GI___open64_nocancel
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%    10.00%  perf_target  [kernel.kallsyms]     [k] coredump_pipe
+            |
+            ---io_intensive
+               __fprintf_chk
+               __vfprintf_internal
+               asm_exc_page_fault
+               exc_page_fault
+               irqentry_exit
+               arch_do_signal_or_restart
+               get_signal
+               vfs_coredump
+               coredump_pipe
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] do_syscall_64
+            |
+            ---do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] x64_sys_call
+            |
+            ---x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%    10.00%  perf_target  [kernel.kallsyms]     [k] handle_softirqs
+            |
+            ---0x40f50be000000000
+               heavy_compute
+               asm_sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+    10.00%    10.00%  perf_target  ld-linux-x86-64.so.2  [.] get_common_cache_info.constprop.0
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               init_cpu_features.constprop.0
+               dl_init_cacheinfo (inlined)
+               get_common_cache_info.constprop.0
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] __x64_sys_openat
+            |
+            ---__x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] do_sys_openat2
+            |
+            ---do_sys_openat2
+               do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               bad_area_nosemaphore
+               __bad_area_nosemaphore
+               __printk_ratelimit
+               ___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] asm_sysvec_apic_timer_interrupt
+            |
+            ---asm_sysvec_apic_timer_interrupt
+               sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] bad_area_nosemaphore
+            |
+            ---bad_area_nosemaphore
+               __bad_area_nosemaphore
+               __printk_ratelimit
+               ___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] do_file_open
+            |
+            ---do_file_open
+               path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] irqentry_exit
+            |
+            ---irqentry_exit
+               arch_do_signal_or_restart
+               get_signal
+               vfs_coredump
+               coredump_pipe
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] __bad_area_nosemaphore
+            |
+            ---__bad_area_nosemaphore
+               __printk_ratelimit
+               ___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] arch_do_signal_or_restart
+            |
+            ---arch_do_signal_or_restart
+               get_signal
+               vfs_coredump
+               coredump_pipe
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] path_openat
+            |
+            ---path_openat
+               alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] sysvec_apic_timer_interrupt
+            |
+            ---sysvec_apic_timer_interrupt
+               irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] __printk_ratelimit
+            |
+            ---__printk_ratelimit
+               ___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] alloc_empty_file
+            |
+            ---alloc_empty_file
+               kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] get_signal
+            |
+            ---get_signal
+               vfs_coredump
+               coredump_pipe
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] irq_exit_rcu
+            |
+            ---irq_exit_rcu
+               __irq_exit_rcu
+               handle_softirqs
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] ___ratelimit
+            |
+            ---___ratelimit
+               _raw_spin_unlock_irqrestore
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] __irq_exit_rcu
+            |
+            ---__irq_exit_rcu
+               handle_softirqs
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] kmem_cache_alloc_noprof
+            |
+            ---kmem_cache_alloc_noprof
+               __memcg_slab_post_alloc_hook
+
+    10.00%     0.00%  perf_target  [kernel.kallsyms]     [.] vfs_coredump
+            |
+            ---vfs_coredump
+               coredump_pipe
+
+    10.00%     0.00%  perf_target  [unknown]             [.] 0x40ad000000000000
+            |
+            ---0x40ad000000000000
+               heavy_compute
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
