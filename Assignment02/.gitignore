@@ -1,0 +1,20 @@
+# Linux kernel build files
+*.o
+*.ko
+*.mod
+*.mod.c
+*.order
+*.symvers
+.*.cmd
+Module.symvers
+modules.order
+
+# Compiled application binaries
+app/sms_app
+app/sms_app_arm
+
+# Backup files
+*.bak
+
+# Additional kernel build metadata
+*.mod

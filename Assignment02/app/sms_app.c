@@ -40,7 +40,7 @@
 static char device_path[256] = DEFAULT_DEVICE;
 static unsigned int interval_ms = DEFAULT_INTERVAL;
 static int sensor_fd = -1;
-
+static int simulation_mode = 0;
 static atomic_bool running = 1;
 static pthread_mutex_t output_mutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -67,7 +67,34 @@ static void sleep_ms(long milliseconds)
         }
     }
 }
+/* Generate simulated sensor data for host-side testing. */
+static void *simulation_reader(void *arg)
+{
+    (void)arg;
 
+    unsigned int sample = 0;
+
+    log_message("[Reader] Simulation reader thread started.");
+
+    while (atomic_load(&running)) {
+        char message[128];
+
+        snprintf(message, sizeof(message),
+                 "[SIMULATION] Sample %u: temperature=30.50, humidity=65.00\n",
+                 ++sample);
+
+        pthread_mutex_lock(&output_mutex);
+        printf("%s", message);
+        fflush(stdout);
+        pthread_mutex_unlock(&output_mutex);
+
+        sleep_ms(interval_ms);
+    }
+
+    log_message("[Reader] Simulation reader thread stopped.");
+
+    return NULL;
+}
 /* Thread 1: Read sensor data from the kernel driver. */
 static void *sensor_reader(void *arg)
 {
@@ -177,13 +204,13 @@ static void *status_monitor(void *arg)
 static void print_usage(const char *program)
 {
     fprintf(stderr,
-            "Usage: %s [-d device_path] [-i interval_ms]\n"
-            "  -d PATH   Sensor device (default: %s)\n"
-            "  -i MS     Sampling interval in milliseconds\n"
-            "  -h        Show this help\n",
-            program, DEFAULT_DEVICE);
+        "Usage: %s [-d device_path] [-i interval_ms] [-t]\n"
+        "  -d PATH   Sensor device (default: %s)\n"
+        "  -i MS     Sampling interval in milliseconds\n"
+        "  -t        Enable host simulation mode\n"
+        "  -h        Show this help\n",
+        program, DEFAULT_DEVICE);
 }
-
 int main(int argc, char *argv[])
 {
     int option;
@@ -199,7 +226,7 @@ int main(int argc, char *argv[])
     sigset_t signal_set;
 
     /* Parse command-line arguments. */
-    while ((option = getopt(argc, argv, "d:i:h")) != -1) {
+    while ((option = getopt(argc, argv, "d:i:th")) != -1) {
         switch (option) {
         case 'd':
             if (strlen(optarg) >= sizeof(device_path)) {
@@ -230,7 +257,9 @@ int main(int argc, char *argv[])
             interval_ms = (int)value;
             break;
         }
-
+case 't':
+    simulation_mode = 1;
+    break;
         case 'h':
             print_usage(argv[0]);
             return EXIT_SUCCESS;
@@ -259,6 +288,12 @@ int main(int argc, char *argv[])
     /* Open the sensor device. */
     sensor_fd = open(device_path, O_RDONLY);
 
+    if (simulation_mode) {
+    printf("[Main] Running in HOST SIMULATION mode.\n");
+} else {
+    /* Open the real sensor device. */
+    sensor_fd = open(device_path, O_RDONLY);
+
     if (sensor_fd == -1) {
         fprintf(stderr, "[Main] open(%s) failed: %s\n",
                 device_path, strerror(errno));
@@ -267,29 +302,30 @@ int main(int argc, char *argv[])
 
     printf("[Main] Device opened successfully, fd=%d\n", sensor_fd);
 
-    /*
-     * Configure the driver's sampling interval.
-     * The ioctl definition must match sms_sensor.c.
-     */
+    /* Configure the driver's sampling interval. */
     if (ioctl(sensor_fd, SMS_SET_INTERVAL, &interval_ms) == -1) {
         fprintf(stderr,
                 "[Main] ioctl(SMS_SET_INTERVAL) failed: %s\n",
                 strerror(errno));
-
-        fprintf(stderr,
-                "[Main] Check the ioctl command definition in sms_sensor.c.\n");
-
         goto cleanup;
     }
 
-    printf("[Main] Driver interval configured to %d ms\n", interval_ms);
+    printf("[Main] Driver interval configured to %d ms\n",
+           interval_ms);
+}
 
-    /* Start reader thread. */
-    if (pthread_create(&reader_thread, NULL,
-                       sensor_reader, NULL) != 0) {
-        fprintf(stderr, "[Main] Cannot create reader thread.\n");
-        goto cleanup;
-    }
+/* Start reader thread. */
+if (pthread_create(
+        &reader_thread,
+        NULL,
+        simulation_mode ? simulation_reader : sensor_reader,
+        NULL) != 0) {
+
+    fprintf(stderr, "[Main] Cannot create reader thread.\n");
+    goto cleanup;
+}
+
+reader_started = 1;
 
     reader_started = 1;
 
