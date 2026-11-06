@@ -1,0 +1,1 @@
+cmd_/home/reberlight1409/SE205096_Truong_Ngoc_Anh_Khoa_Lab03/Assignment01/task1_ioctl/Module.symvers := sed 's/\.ko$$/\.o/' /home/reberlight1409/SE205096_Truong_Ngoc_Anh_Khoa_Lab03/Assignment01/task1_ioctl/modules.order | scripts/mod/modpost    -o /home/reberlight1409/SE205096_Truong_Ngoc_Anh_Khoa_Lab03/Assignment01/task1_ioctl/Module.symvers -e -i Module.symvers   -n -T -
