@@ -21,7 +21,3 @@ and report for LAB-03 Embedded Linux Systems.
 - `logs/`: Debugging and profiling logs
 - `output/`: Generated output files
 - `bao_cao/`: Lab report in PDF format
-
-## Report
-
-See the PDF report in the `bao_cao/` directory.
