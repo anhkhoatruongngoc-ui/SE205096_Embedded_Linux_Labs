@@ -34,11 +34,11 @@
  * the kernel driver exactly.
  */
 #ifndef SMS_SET_INTERVAL
-#define SMS_SET_INTERVAL _IOW('S', 1, int)
+#define SMS_SET_INTERVAL _IOW('S', 1, unsigned int)
 #endif
 
 static char device_path[256] = DEFAULT_DEVICE;
-static int interval_ms = DEFAULT_INTERVAL;
+static unsigned int interval_ms = DEFAULT_INTERVAL;
 static int sensor_fd = -1;
 
 static atomic_bool running = 1;
