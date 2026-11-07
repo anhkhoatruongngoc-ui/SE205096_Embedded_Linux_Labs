@@ -24,7 +24,7 @@ Embedded Linux Systems
 - `logs/`: Actual test results and execution logs.
 - `mtd/`: Documentation or data related to MTD/JFFS2.
 - `configs/`: Configuration files used for the lab.
-- `bao_cao/`: PDF report.
+
 
 ## Notes
 All test results and reports must accurately reflect the work that has actually been completed. Do not include fabricated test results or claim that unverified features are working.

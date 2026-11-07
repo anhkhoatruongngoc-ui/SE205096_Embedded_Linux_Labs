@@ -25,7 +25,7 @@ BusyBox-based root filesystem preparation, and system booting with QEMU.
 - `output/initramfs.cpio.gz`: Compressed initial RAM filesystem.
 - `output/u-boot`: U-Boot binary.
 - `rootfs/initramfs/`: BusyBox-based root filesystem.
-- `bao_cao/`: Lab report directory.
+  
 
 ## 4. Booting with QEMU
 
