@@ -1,7 +1,14 @@
-event syntax error: '..u!1cycles/,cpu_atom/TOPDOWN_RETIRING.ALL,metric-id=cpu..'
-                                  \___ Bad event or PMU
 
-Unable to find PMU or event on a PMU of 'cpu_atom'
-Error:
-No supported events found.
-¡þ
+ Performance counter stats for './apps/perf_target':
+
+             19.83 msec task-clock                                                            
+                28      context-switches                                                      
+                 0      cpu-migrations                                                        
+               378      page-faults                                                           
+
+       0.027444172 seconds time elapsed
+
+       0.010446000 seconds user
+       0.010446000 seconds sys
+
+
