@@ -20,4 +20,4 @@ and report for LAB-03 Embedded Linux Systems.
 - `apps/`: C source code and test applications
 - `logs/`: Debugging and profiling logs
 - `output/`: Generated output files
-- `bao_cao/`: Lab report in PDF format
+  
